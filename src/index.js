@@ -4,9 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Retornando um component aqui
+// function Test(){
+//   return <h1>Hello World!</h1>
+// }
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    {/* Passar como parametro na função rende */}
+    {/* <Test /> */}
+
   </React.StrictMode>,
   document.getElementById('root')
 );
