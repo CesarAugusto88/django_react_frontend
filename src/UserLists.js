@@ -1,5 +1,6 @@
 import React from 'react';
 import ListComponent from './ListComponent';
+import LoginComponent from './LoginComponent';
 
 export default class UserLists extends React.Component{
         state = { lists: [], loading: true }
@@ -10,7 +11,7 @@ export default class UserLists extends React.Component{
 		    'Content-Type': 'application/json'
 		}
 	    }
-	    config.headers['Authorization'] = 'Token dadb6351985394669d4071448f0711c51683f79e';
+	    config.headers['Authorization'] = 'Token 1ba2db49e661fcc69221dfc50ed52eebe9804f5f';
 
 	    var url = 'http://127.0.0.1:8000/list/';
 	    const response = await fetch(url, config);
@@ -22,14 +23,16 @@ export default class UserLists extends React.Component{
 	render()
 	{
 	    const listsApi = this.state.lists;
-	    return (
-	        <div>
-		    {/*<ListComponent listName={'Minha Lista'} />
-		    <ListComponent listName={'Minha Lista 2'} />*/}		
+	    var token = '';
 
-		    {listsApi.map(list => <ListComponent key={list.id} listName={list.name} items={list.item_set} />)}
-	        </div>
-       	    )
+	    if(token==='')
+	        return <LoginComponent />
+	    else 
+	        return (
+	            <div>
+		        {listsApi.map(list => <ListComponent key={list.id} listName={list.name} items={list.item_set} />)}
+	            </div>
+       	        )
 	}
 }
 
