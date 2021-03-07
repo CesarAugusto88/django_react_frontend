@@ -5,7 +5,7 @@ import LoginComponent from './LoginComponent';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <LoginComponent />,  
+  <LoginComponent />,
   document.getElementById('root')
 );
 
