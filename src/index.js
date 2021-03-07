@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import UserLists from './UserLists';
+import LoginComponent from './LoginComponent';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <UserLists />,  
+  <LoginComponent />,  
   document.getElementById('root')
 );
 
