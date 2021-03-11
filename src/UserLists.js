@@ -3,6 +3,7 @@ import ListComponent from './ListComponent';
 
 export default class UserLists extends React.Component{
     state = { lists: [], loading: true }
+
     async componentDidMount(){
         const config = {
             headers: {
@@ -11,20 +12,20 @@ export default class UserLists extends React.Component{
         }
         config.headers['Authorization'] = 'Token ' + localStorage.getItem('token');
 
-        var url = 'http://13.68.187.199:8080/list/';
+        var url = 'http://13.90.229.205:8080/list/';
         const response = await fetch(url, config);
         const data = await response.json();
         console.log(data);
-        this.setState({ lists: data, loading: false })
+        this.setState({lists: data, loading: false});
     }
-    render()
+
+    render() 
     {
         const listsApi = this.state.lists;
         return (
             <div>
                 {listsApi.map(list => <ListComponent key={list.id} listName={list.name} items={list.item_set} />)}
             </div>
-       	)
+        )
     }
 }
-
