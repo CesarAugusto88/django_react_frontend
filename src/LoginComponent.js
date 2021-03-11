@@ -20,7 +20,7 @@ export default class LoginComponent extends React.Component{
       }
     
       handleSubmit(event) {
-        var url = 'http://13.90.229.205:8080/api-token-auth/';
+        var url = 'http://52.234.131.95:8080/api-token-auth/';
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
